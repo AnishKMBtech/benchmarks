@@ -40,14 +40,14 @@ In this post, we will analyze the differences in model weights and evaluate thei
 st.header("Weights Comparison")
 st.write("""
 In this section, we compare the mean absolute weights of the parameters for both the original and fine-tuned models. 
-The bar graph below illustrates how the fine-tuning process has affected the model parameters.
+The bar graph below illustrates how the fine-tuning process has affected the model parameters. Although the differences are minor, they provide insights into the impact of fine-tuning.
 """)
 st.image(weights_comparison_img, caption='Comparison of Model Weights')
 
 st.header("Confusion Matrices")
 st.write("""
 The confusion matrices below provide a visual representation of the performance of both models on a sample dataset. 
-These matrices show the number of correct and incorrect predictions made by each model, helping us understand their strengths and weaknesses.
+These matrices show the number of correct and incorrect predictions made by each model, helping us understand their strengths and weaknesses. Despite the minor variations, these matrices are crucial for evaluating model performance.
 """)
 col1, col2 = st.columns(2)
 
@@ -62,7 +62,7 @@ with col2:
 st.header("Conclusion")
 st.write("""
 In this blog post, we have compared the original and fine-tuned GPT-Neo models by analyzing their weights and performance on a sample dataset. 
-The fine-tuning process has led to changes in the model parameters, as seen in the weights comparison, and has impacted the model's performance, as shown in the confusion matrices.
+The fine-tuning process has led to minor changes in the model parameters, as seen in the weights comparison, and has slightly impacted the model's performance, as shown in the confusion matrices.
 By understanding these differences, we can make informed decisions about which model to use for specific tasks.
 """)
 
