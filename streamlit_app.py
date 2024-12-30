@@ -42,8 +42,8 @@ flowchart_svg = """
   <text x="120" y="610" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Logging & Monitoring</text>
 
   <!-- Display Output to User -->
-  <rect x="300" y="100" width="200" height="50" fill="lightskyblue" rx="15" ry="15" />
-  <text x="400" y="130" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Display Output to User</text>
+  <rect x="20" y="660" width="200" height="50" fill="lightskyblue" rx="15" ry="15" />
+  <text x="120" y="690" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Display Output to User</text>
 
   <!-- Arrows -->
   <line x1="120" y1="70" x2="120" y2="100" stroke="white" stroke-width="2" />
@@ -53,10 +53,7 @@ flowchart_svg = """
   <line x1="120" y1="390" x2="120" y2="420" stroke="white" stroke-width="2" />
   <line x1="120" y1="470" x2="120" y2="500" stroke="white" stroke-width="2" />
   <line x1="120" y1="550" x2="120" y2="580" stroke="white" stroke-width="2" />
-  <line x1="400" y1="150" x2="400" y2="100" stroke="white" stroke-width="2" />
-  <line x1="400" y1="230" x2="400" y2="180" stroke="white" stroke-width="2" />
-  <line x1="400" y1="310" x2="400" y2="340" stroke="white" stroke-width="2" />
-  <line x1="400" y1="390" x2="400" y2="420" stroke="white" stroke-width="2" />
+  <line x1="120" y1="630" x2="120" y2="580" stroke="white" stroke-width="2" />
 </svg>
 """
 
