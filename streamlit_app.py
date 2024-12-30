@@ -53,7 +53,7 @@ flowchart_svg = """
   <line x1="120" y1="390" x2="120" y2="420" stroke="white" stroke-width="2" />
   <line x1="120" y1="470" x2="120" y2="500" stroke="white" stroke-width="2" />
   <line x1="120" y1="550" x2="120" y2="580" stroke="white" stroke-width="2" />
-  <line x1="120" y1="630" x2="120" y2="580" stroke="white" stroke-width="2" />
+  <line x1="120" y1="630" x2="120" y2="660" stroke="white" stroke-width="2" />
 </svg>
 """
 
