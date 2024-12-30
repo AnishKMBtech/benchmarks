@@ -1,5 +1,4 @@
 import streamlit as st
-import graphviz
 
 # Set page title
 st.set_page_config(page_title="User-Task Automation Flowchart", page_icon=":robot_face:")
@@ -7,29 +6,50 @@ st.set_page_config(page_title="User-Task Automation Flowchart", page_icon=":robo
 # Display title
 st.title("User-Task Automation Flowchart using Language Model, Vision Model, and PyAutoGUI")
 
-# Function to generate flowchart using Graphviz
-def create_flowchart():
-    # Create a new directed graph
-    dot = graphviz.Digraph(comment='User-Task Automation Flowchart')
+# Flowchart in SVG format (you can create it externally and embed or use it inline)
+flowchart_svg = """
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+  <rect x="20" y="20" width="200" height="50" fill="lightblue" />
+  <text x="120" y="50" font-size="16" text-anchor="middle" fill="black">User Input via Web Interface</text>
+  
+  <rect x="20" y="100" width="200" height="50" fill="lightgreen" />
+  <text x="120" y="130" font-size="16" text-anchor="middle" fill="black">Language Model Task Interpretation</text>
+  
+  <rect x="20" y="180" width="200" height="50" fill="lightyellow" />
+  <text x="120" y="210" font-size="16" text-anchor="middle" fill="black">Vision Model (OpenCV / OmniParser)</text>
+  
+  <rect x="20" y="260" width="200" height="50" fill="lightcoral" />
+  <text x="120" y="290" font-size="16" text-anchor="middle" fill="black">Action Mapping and Collaboration</text>
+  
+  <rect x="20" y="340" width="200" height="50" fill="lightgray" />
+  <text x="120" y="370" font-size="16" text-anchor="middle" fill="black">Execution with PyAutoGUI</text>
+  
+  <rect x="20" y="420" width="200" height="50" fill="lightpink" />
+  <text x="120" y="450" font-size="16" text-anchor="middle" fill="black">Verification of Task Completion</text>
+  
+  <rect x="20" y="500" width="200" height="50" fill="lightseagreen" />
+  <text x="120" y="530" font-size="16" text-anchor="middle" fill="black">Feedback to Language Model</text>
+  
+  <rect x="300" y="100" width="200" height="50" fill="lightskyblue" />
+  <text x="400" y="130" font-size="16" text-anchor="middle" fill="black">Display Output to User</text>
+  
+  <rect x="300" y="180" width="200" height="50" fill="lightgoldenrodyellow" />
+  <text x="400" y="210" font-size="16" text-anchor="middle" fill="black">Logging & Monitoring</text>
 
-    # Add nodes and edges for the flowchart
-    dot.node('A', 'User Input via Web Interface')
-    dot.node('B', 'Language Model Task Interpretation')
-    dot.node('C', 'Vision Model (OpenCV / OmniParser)')
-    dot.node('D', 'Action Mapping and Collaboration Between Models')
-    dot.node('E', 'Execution with PyAutoGUI')
-    dot.node('F', 'Verification of Task Completion')
-    dot.node('G', 'Feedback to Language Model')
-    dot.node('H', 'Display Output to User')
-    dot.node('I', 'Logging & Monitoring')
+  <!-- Lines to connect boxes -->
+  <line x1="120" y1="70" x2="120" y2="100" stroke="black" stroke-width="2" />
+  <line x1="120" y1="150" x2="120" y2="180" stroke="black" stroke-width="2" />
+  <line x1="120" y1="230" x2="120" y2="260" stroke="black" stroke-width="2" />
+  <line x1="120" y1="310" x2="120" y2="340" stroke="black" stroke-width="2" />
+  <line x1="120" y1="390" x2="120" y2="420" stroke="black" stroke-width="2" />
+  <line x1="120" y1="470" x2="120" y2="500" stroke="black" stroke-width="2" />
+  <line x1="400" y1="150" x2="400" y2="100" stroke="black" stroke-width="2" />
+  <line x1="400" y1="230" x2="400" y2="180" stroke="black" stroke-width="2" />
+</svg>
+"""
 
-    dot.edges(['AB', 'BC', 'CD', 'DE', 'EF', 'FG', 'GH', 'HI'])
-
-    # Render the graph as an image in the Streamlit app
-    st.graphviz_chart(dot)
-
-# Display the flowchart
-create_flowchart()
+# Display the SVG Flowchart
+st.markdown(flowchart_svg, unsafe_allow_html=True)
 
 # Display the task steps with descriptions
 st.subheader("Process Description")
