@@ -1,6 +1,5 @@
 import streamlit as st
-import matplotlib.pyplot as plt
-import networkx as nx
+import graphviz
 
 # Set page title
 st.set_page_config(page_title="User-Task Automation Flowchart", page_icon=":robot_face:")
@@ -8,49 +7,26 @@ st.set_page_config(page_title="User-Task Automation Flowchart", page_icon=":robo
 # Display title
 st.title("User-Task Automation Flowchart using Language Model, Vision Model, and PyAutoGUI")
 
-# Function to generate flowchart using networkx
+# Function to generate flowchart using Graphviz
 def create_flowchart():
-    G = nx.DiGraph()
+    # Create a new directed graph
+    dot = graphviz.Digraph(comment='User-Task Automation Flowchart')
 
-    # Define the flowchart nodes
-    nodes = [
-        "User Input via Web Interface",
-        "Language Model Task Interpretation",
-        "Vision Model (OpenCV / OmniParser)",
-        "Action Mapping and Collaboration Between Models",
-        "Execution with PyAutoGUI",
-        "Verification of Task Completion",
-        "Feedback to Language Model",
-        "Display Output to User",
-        "Logging & Monitoring"
-    ]
+    # Add nodes and edges for the flowchart
+    dot.node('A', 'User Input via Web Interface')
+    dot.node('B', 'Language Model Task Interpretation')
+    dot.node('C', 'Vision Model (OpenCV / OmniParser)')
+    dot.node('D', 'Action Mapping and Collaboration Between Models')
+    dot.node('E', 'Execution with PyAutoGUI')
+    dot.node('F', 'Verification of Task Completion')
+    dot.node('G', 'Feedback to Language Model')
+    dot.node('H', 'Display Output to User')
+    dot.node('I', 'Logging & Monitoring')
 
-    # Add nodes to the graph
-    G.add_nodes_from(nodes)
+    dot.edges(['AB', 'BC', 'CD', 'DE', 'EF', 'FG', 'GH', 'HI'])
 
-    # Define the flow between the nodes (edges)
-    edges = [
-        ("User Input via Web Interface", "Language Model Task Interpretation"),
-        ("Language Model Task Interpretation", "Vision Model (OpenCV / OmniParser)"),
-        ("Vision Model (OpenCV / OmniParser)", "Action Mapping and Collaboration Between Models"),
-        ("Action Mapping and Collaboration Between Models", "Execution with PyAutoGUI"),
-        ("Execution with PyAutoGUI", "Verification of Task Completion"),
-        ("Verification of Task Completion", "Feedback to Language Model"),
-        ("Feedback to Language Model", "Display Output to User"),
-        ("Display Output to User", "Logging & Monitoring")
-    ]
-
-    # Add edges to the graph
-    G.add_edges_from(edges)
-
-    # Set node positions using spring layout
-    pos = nx.spring_layout(G, seed=42)
-
-    # Plot the graph
-    plt.figure(figsize=(10, 8))
-    nx.draw(G, pos, with_labels=True, node_size=3000, node_color="skyblue", font_size=10, font_weight="bold", edge_color="gray")
-    plt.title("User-Task Automation Flowchart")
-    st.pyplot()
+    # Render the graph as an image in the Streamlit app
+    st.graphviz_chart(dot)
 
 # Display the flowchart
 create_flowchart()
