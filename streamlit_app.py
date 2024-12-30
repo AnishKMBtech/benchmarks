@@ -6,45 +6,54 @@ st.set_page_config(page_title="User-Task Automation Flowchart", page_icon=":robo
 # Display title
 st.title("User-Task Automation Flowchart using Language Model, Vision Model, and PyAutoGUI")
 
-# Flowchart in SVG format (you can create it externally and embed or use it inline)
+# Flowchart in SVG format with text fitting inside boxes and arrows in white
 flowchart_svg = """
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+  <!-- User Input via Web Interface -->
   <rect x="20" y="20" width="200" height="50" fill="lightblue" />
-  <text x="120" y="50" font-size="16" text-anchor="middle" fill="black">User Input via Web Interface</text>
+  <text x="120" y="45" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">User Input via Web Interface</text>
   
+  <!-- Language Model Task Interpretation -->
   <rect x="20" y="100" width="200" height="50" fill="lightgreen" />
-  <text x="120" y="130" font-size="16" text-anchor="middle" fill="black">Language Model Task Interpretation</text>
+  <text x="120" y="130" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Language Model Task Interpretation</text>
   
+  <!-- Vision Model (OpenCV / OmniParser) -->
   <rect x="20" y="180" width="200" height="50" fill="lightyellow" />
-  <text x="120" y="210" font-size="16" text-anchor="middle" fill="black">Vision Model (OpenCV / OmniParser)</text>
+  <text x="120" y="210" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Vision Model (OpenCV / OmniParser)</text>
   
+  <!-- Action Mapping and Collaboration -->
   <rect x="20" y="260" width="200" height="50" fill="lightcoral" />
-  <text x="120" y="290" font-size="16" text-anchor="middle" fill="black">Action Mapping and Collaboration</text>
+  <text x="120" y="290" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Action Mapping and Collaboration</text>
   
+  <!-- Execution with PyAutoGUI -->
   <rect x="20" y="340" width="200" height="50" fill="lightgray" />
-  <text x="120" y="370" font-size="16" text-anchor="middle" fill="black">Execution with PyAutoGUI</text>
+  <text x="120" y="370" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Execution with PyAutoGUI</text>
   
+  <!-- Verification of Task Completion -->
   <rect x="20" y="420" width="200" height="50" fill="lightpink" />
-  <text x="120" y="450" font-size="16" text-anchor="middle" fill="black">Verification of Task Completion</text>
+  <text x="120" y="450" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Verification of Task Completion</text>
   
+  <!-- Feedback to Language Model -->
   <rect x="20" y="500" width="200" height="50" fill="lightseagreen" />
-  <text x="120" y="530" font-size="16" text-anchor="middle" fill="black">Feedback to Language Model</text>
+  <text x="120" y="530" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Feedback to Language Model</text>
   
+  <!-- Display Output to User -->
   <rect x="300" y="100" width="200" height="50" fill="lightskyblue" />
-  <text x="400" y="130" font-size="16" text-anchor="middle" fill="black">Display Output to User</text>
+  <text x="400" y="130" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Display Output to User</text>
   
+  <!-- Logging & Monitoring -->
   <rect x="300" y="180" width="200" height="50" fill="lightgoldenrodyellow" />
-  <text x="400" y="210" font-size="16" text-anchor="middle" fill="black">Logging & Monitoring</text>
+  <text x="400" y="210" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Logging & Monitoring</text>
 
-  <!-- Lines to connect boxes -->
-  <line x1="120" y1="70" x2="120" y2="100" stroke="black" stroke-width="2" />
-  <line x1="120" y1="150" x2="120" y2="180" stroke="black" stroke-width="2" />
-  <line x1="120" y1="230" x2="120" y2="260" stroke="black" stroke-width="2" />
-  <line x1="120" y1="310" x2="120" y2="340" stroke="black" stroke-width="2" />
-  <line x1="120" y1="390" x2="120" y2="420" stroke="black" stroke-width="2" />
-  <line x1="120" y1="470" x2="120" y2="500" stroke="black" stroke-width="2" />
-  <line x1="400" y1="150" x2="400" y2="100" stroke="black" stroke-width="2" />
-  <line x1="400" y1="230" x2="400" y2="180" stroke="black" stroke-width="2" />
+  <!-- Arrows -->
+  <line x1="120" y1="70" x2="120" y2="100" stroke="white" stroke-width="2" />
+  <line x1="120" y1="150" x2="120" y2="180" stroke="white" stroke-width="2" />
+  <line x1="120" y1="230" x2="120" y2="260" stroke="white" stroke-width="2" />
+  <line x1="120" y1="310" x2="120" y2="340" stroke="white" stroke-width="2" />
+  <line x1="120" y1="390" x2="120" y2="420" stroke="white" stroke-width="2" />
+  <line x1="120" y1="470" x2="120" y2="500" stroke="white" stroke-width="2" />
+  <line x1="400" y1="150" x2="400" y2="100" stroke="white" stroke-width="2" />
+  <line x1="400" y1="230" x2="400" y2="180" stroke="white" stroke-width="2" />
 </svg>
 """
 
