@@ -6,9 +6,9 @@ st.set_page_config(page_title="User-Task Automation Flowchart", page_icon=":robo
 # Display title
 st.title("User-Task Automation Flowchart using Language Model, Vision Model, and PyAutoGUI")
 
-# Flowchart in SVG format with corrected order, curved edges, and white arrows
+# Flowchart in SVG format with adjusted order, and rounded edges
 flowchart_svg = """
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750">
   <!-- User Input via Web Interface -->
   <rect x="20" y="20" width="200" height="50" fill="lightblue" rx="15" ry="15" />
   <text x="120" y="45" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">User Input via Web Interface</text>
@@ -37,13 +37,13 @@ flowchart_svg = """
   <rect x="20" y="500" width="200" height="50" fill="lightseagreen" rx="15" ry="15" />
   <text x="120" y="530" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Feedback to Language Model</text>
   
+  <!-- Logging & Monitoring -->
+  <rect x="20" y="580" width="200" height="50" fill="lightgoldenrodyellow" rx="15" ry="15" />
+  <text x="120" y="610" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Logging & Monitoring</text>
+
   <!-- Display Output to User -->
   <rect x="300" y="100" width="200" height="50" fill="lightskyblue" rx="15" ry="15" />
   <text x="400" y="130" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Display Output to User</text>
-  
-  <!-- Logging & Monitoring -->
-  <rect x="300" y="180" width="200" height="50" fill="lightgoldenrodyellow" rx="15" ry="15" />
-  <text x="400" y="210" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Logging & Monitoring</text>
 
   <!-- Arrows -->
   <line x1="120" y1="70" x2="120" y2="100" stroke="white" stroke-width="2" />
@@ -52,8 +52,11 @@ flowchart_svg = """
   <line x1="120" y1="310" x2="120" y2="340" stroke="white" stroke-width="2" />
   <line x1="120" y1="390" x2="120" y2="420" stroke="white" stroke-width="2" />
   <line x1="120" y1="470" x2="120" y2="500" stroke="white" stroke-width="2" />
+  <line x1="120" y1="550" x2="120" y2="580" stroke="white" stroke-width="2" />
   <line x1="400" y1="150" x2="400" y2="100" stroke="white" stroke-width="2" />
   <line x1="400" y1="230" x2="400" y2="180" stroke="white" stroke-width="2" />
+  <line x1="400" y1="310" x2="400" y2="340" stroke="white" stroke-width="2" />
+  <line x1="400" y1="390" x2="400" y2="420" stroke="white" stroke-width="2" />
 </svg>
 """
 
@@ -100,6 +103,7 @@ st.write("""
 
 ### 9. Display Output to User:
 - The system displays the final outcome (success or failure) to the user via the web interface.
+
 """)
 
 # Add a note for users
