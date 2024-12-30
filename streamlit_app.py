@@ -6,43 +6,43 @@ st.set_page_config(page_title="User-Task Automation Flowchart", page_icon=":robo
 # Display title
 st.title("User-Task Automation Flowchart using Language Model, Vision Model, and PyAutoGUI")
 
-# Flowchart in SVG format with text fitting inside boxes and arrows in white
+# Flowchart in SVG format with corrected order, curved edges, and white arrows
 flowchart_svg = """
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
   <!-- User Input via Web Interface -->
-  <rect x="20" y="20" width="200" height="50" fill="lightblue" />
+  <rect x="20" y="20" width="200" height="50" fill="lightblue" rx="15" ry="15" />
   <text x="120" y="45" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">User Input via Web Interface</text>
   
   <!-- Language Model Task Interpretation -->
-  <rect x="20" y="100" width="200" height="50" fill="lightgreen" />
+  <rect x="20" y="100" width="200" height="50" fill="lightgreen" rx="15" ry="15" />
   <text x="120" y="130" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Language Model Task Interpretation</text>
   
   <!-- Vision Model (OpenCV / OmniParser) -->
-  <rect x="20" y="180" width="200" height="50" fill="lightyellow" />
+  <rect x="20" y="180" width="200" height="50" fill="lightyellow" rx="15" ry="15" />
   <text x="120" y="210" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Vision Model (OpenCV / OmniParser)</text>
   
   <!-- Action Mapping and Collaboration -->
-  <rect x="20" y="260" width="200" height="50" fill="lightcoral" />
+  <rect x="20" y="260" width="200" height="50" fill="lightcoral" rx="15" ry="15" />
   <text x="120" y="290" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Action Mapping and Collaboration</text>
   
   <!-- Execution with PyAutoGUI -->
-  <rect x="20" y="340" width="200" height="50" fill="lightgray" />
+  <rect x="20" y="340" width="200" height="50" fill="lightgray" rx="15" ry="15" />
   <text x="120" y="370" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Execution with PyAutoGUI</text>
   
   <!-- Verification of Task Completion -->
-  <rect x="20" y="420" width="200" height="50" fill="lightpink" />
+  <rect x="20" y="420" width="200" height="50" fill="lightpink" rx="15" ry="15" />
   <text x="120" y="450" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Verification of Task Completion</text>
   
   <!-- Feedback to Language Model -->
-  <rect x="20" y="500" width="200" height="50" fill="lightseagreen" />
+  <rect x="20" y="500" width="200" height="50" fill="lightseagreen" rx="15" ry="15" />
   <text x="120" y="530" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Feedback to Language Model</text>
   
   <!-- Display Output to User -->
-  <rect x="300" y="100" width="200" height="50" fill="lightskyblue" />
+  <rect x="300" y="100" width="200" height="50" fill="lightskyblue" rx="15" ry="15" />
   <text x="400" y="130" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Display Output to User</text>
   
   <!-- Logging & Monitoring -->
-  <rect x="300" y="180" width="200" height="50" fill="lightgoldenrodyellow" />
+  <rect x="300" y="180" width="200" height="50" fill="lightgoldenrodyellow" rx="15" ry="15" />
   <text x="400" y="210" font-size="12" text-anchor="middle" fill="black" width="180" textLength="180">Logging & Monitoring</text>
 
   <!-- Arrows -->
@@ -94,12 +94,12 @@ st.write("""
 - Based on the visual verification, the vision model sends feedback to the language model.
 - The system updates the task status (success or failure) and decides whether to retry or confirm success.
 
-### 8. Display Output to User:
-- The system displays the final outcome (success or failure) to the user via the web interface.
-
-### 9. Logging & Monitoring:
+### 8. Logging & Monitoring:
 - Each action and decision is logged for debugging and optimization purposes.
 - The system can track failures, retries, and task completion for future analysis.
+
+### 9. Display Output to User:
+- The system displays the final outcome (success or failure) to the user via the web interface.
 """)
 
 # Add a note for users
