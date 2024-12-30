@@ -4,7 +4,7 @@ from PIL import Image
 # Load images
 weights_comparison_img = Image.open('results/plots/weights_comparison.png')
 original_conf_matrix_img = Image.open('results/plots/original_model_confusion_matrix.png')
-finetuned_conf_matrix_img = Image.open('results/plots/finetuned_model_confusion_matrix.png')
+finetuned_conf_matrix_img = Image.open('results/plots/fine-tuned_model_confusion_matrix.png')
 
 # Set page configuration
 st.set_page_config(page_title="Model Comparison Blog", layout="wide")
