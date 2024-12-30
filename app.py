@@ -3,8 +3,6 @@ from PIL import Image
 
 # Load images
 weights_comparison_img = Image.open('results/plots/weights_comparison.png')
-original_conf_matrix_img = Image.open('results/plots/original_model_confusion_matrix.png')
-finetuned_conf_matrix_img = Image.open('results/plots/fine-tuned_model_confusion_matrix.png')
 
 # Set page configuration
 st.set_page_config(page_title="Model Comparison Blog", layout="wide")
@@ -34,7 +32,7 @@ st.title("Model Comparison Blog: Original vs Fine-Tuned")
 st.header("Introduction")
 st.write("""
 Welcome to this blog post where we compare the performance of two language models: the original GPT-Neo model and a fine-tuned version of the same model. 
-In this post, we will analyze the differences in model weights and evaluate their performance using confusion matrices.
+In this post, we will analyze the differences in model weights.
 """)
 
 st.header("Weights Comparison")
@@ -44,25 +42,10 @@ The bar graph below illustrates how the fine-tuning process has affected the mod
 """)
 st.image(weights_comparison_img, caption='Comparison of Model Weights')
 
-st.header("Confusion Matrices")
-st.write("""
-The confusion matrices below provide a visual representation of the performance of both models on a sample dataset. 
-These matrices show the number of correct and incorrect predictions made by each model, helping us understand their strengths and weaknesses. Despite the minor variations, these matrices are crucial for evaluating model performance.
-""")
-col1, col2 = st.columns(2)
-
-with col1:
-    st.subheader("Original Model")
-    st.image(original_conf_matrix_img, caption='Original Model Confusion Matrix')
-
-with col2:
-    st.subheader("Fine-Tuned Model")
-    st.image(finetuned_conf_matrix_img, caption='Fine-Tuned Model Confusion Matrix')
-
 st.header("Conclusion")
 st.write("""
-In this blog post, we have compared the original and fine-tuned GPT-Neo models by analyzing their weights and performance on a sample dataset. 
-The fine-tuning process has led to minor changes in the model parameters, as seen in the weights comparison, and has slightly impacted the model's performance, as shown in the confusion matrices.
+In this blog post, we have compared the original and fine-tuned GPT-Neo models by analyzing their weights. 
+The fine-tuning process has led to minor changes in the model parameters, as seen in the weights comparison.
 By understanding these differences, we can make informed decisions about which model to use for specific tasks.
 """)
 
